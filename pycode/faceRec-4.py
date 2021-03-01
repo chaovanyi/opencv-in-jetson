@@ -57,8 +57,8 @@ for root, dirs, files in os.walk(image_dir):
             name = 'Unknow Person'
             matches = face_recognition.compare_faces(Encodings,face_encoding) #compare known faces (Encodings) and unknow faces (face_encoding)
             if True in matches:
-                first_match_index = matches.index(True)
-                name = Names[first_match_index]
+                first_match_index = matches.index(True) #find the first true index.
+                name = Names[first_match_index] #take 1 name from Names array by using index from first_match_index
             cv2.rectangle(testImage,(left,top),(right,bottom),(0,0,255),2)
             cv2.putText(testImage,name,(left,top-6),font,.75,(0,255,0),2)
 
