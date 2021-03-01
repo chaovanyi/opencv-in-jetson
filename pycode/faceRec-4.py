@@ -55,7 +55,7 @@ for root, dirs, files in os.walk(image_dir):
 
         for (top,right,bottom,left),face_encoding in zip(facePositions,allEncodings):
             name = 'Unknow Person'
-            matches = face_recognition.compare_faces(Encodings,face_encoding) #compare known faces and unknow faces
+            matches = face_recognition.compare_faces(Encodings,face_encoding) #compare known faces (Encodings) and unknow faces (face_encoding)
             if True in matches:
                 first_match_index = matches.index(True)
                 name = Names[first_match_index]
